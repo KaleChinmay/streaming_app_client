@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactPlayer from "react-player"
 export default class Player extends Component {
     constructor(props) {
         super(props);
@@ -20,9 +21,8 @@ export default class Player extends Component {
         return (
             <div className="App">
                 <header className="App-header">
-                    <video controls muted autoPlay>
-                        <source src={`http://localhost:4000/video/${this.state.videoId}`} type="video/mp4"></source>
-                    </video>
+                    <ReactPlayer url={`http://localhost:4000/video/${this.state.videoId}`} type="video/mp4" controls muted autoPlay height="70%" width="70%">
+                    </ReactPlayer>
                     <h1>{ this.state.videoData.name }</h1>
                 </header>
             </div>
