@@ -62,7 +62,6 @@ export default class Home extends Component {
                             {this.state.youtubeVideos.map(video =>
                                 <div className="col-md-4">
                                     <ReactPlayer url={video} height="auto" width="auto">
-
                                     </ReactPlayer>
                                 </div>
                             )}
