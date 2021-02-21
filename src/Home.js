@@ -13,7 +13,7 @@ export default class Home extends Component {
     }
     async componentDidMount() {
         try {
-            const response = await fetch('https://anime-stream-app.herokuapp.com:4000/videos');
+            const response = await fetch('https://anime-stream-app.herokuapp.com/videos');
             const data = await response.json();
             this.setState({ serverVideos: [...data] });
         } catch (error) {
@@ -42,7 +42,7 @@ export default class Home extends Component {
                             <div className="col-md-4" key={video.id}>
                                 <Link to={`/player/${video.id}`}>
                                     <div className="card border-0">
-                                        <img src={`https://anime-stream-app.herokuapp.com:4000${video.poster}`} alt={video.name} />
+                                        <img src={`https://anime-stream-app.herokuapp.com${video.poster}`} alt={video.name} />
                                         <div className="card-body">
                                             <p>{video.name}</p>
                                             <p>{video.duration}</p>
